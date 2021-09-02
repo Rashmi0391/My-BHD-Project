@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- added the below line to get to access to the commandButtonon line 20 -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Customer Dashboard</title>
+	<link rel="stylesheet" href="./res/reset.css"></link>
+	<link rel="stylesheet" href="./res/kate-style.css"></link>
+</h:head>
+
+<body style="background-color: #65909C">
+	<div class="header">
+        <a href="index.html"><img src="./res/images/logo.png"></img></a>
+            <div class="nav">
+				<p>welcome #{loginBean.getCurrentUser()}</p>
+                <ul>
+                    <li>
+                        <a href="./index.html">Homepage</a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+	
+
+	<div class="box_customer_dashboard">
+
+		<h:form action="">
+			<div class="container" >
+
+				<h:panelGrid columns="2" cellpadding="5" >
+					<p:outputLabel  value="No Of Audlts" style="font-weight:bold" />
+					<p:selectOneMenu id="noOfAdults" value="#{bookingDetailsBean.noOfAdults}">
+						<f:selectItem itemLabel="Select One" itemValue="" />
+						<f:selectItem itemLabel="0" itemValue="0" />
+						<f:selectItem itemLabel="1" itemValue="1" />
+						<f:selectItem itemLabel="2" itemValue="2" />
+						<f:selectItem itemLabel="3" itemValue="3" />
+						<f:selectItem itemLabel="4" itemValue="4" />
+						<f:selectItem itemLabel="5" itemValue="5" />
+						<f:selectItem itemLabel="6" itemValue="6" />
+						<f:selectItem itemLabel="7" itemValue="7" />
+						<f:selectItem itemLabel="8" itemValue="8" />
+						<f:selectItem itemLabel="9" itemValue="9" />
+						<f:selectItem itemLabel="10" itemValue="10" />
+					</p:selectOneMenu>
+				</h:panelGrid>
+
+				<h:panelGrid columns="2" cellpadding="5" >
+					<p:outputLabel for="noOfChild" value="No Of Children"
+						style="font-weight:bold" />
+					<p:selectOneMenu id="noOfChild"
+						value="#{bookingDetailsBean.noOfChild}">
+						<f:selectItem itemLabel="Select One" itemValue="" />
+						<f:selectItem itemLabel="0" itemValue="0" />
+						<f:selectItem itemLabel="1" itemValue="1" />
+						<f:selectItem itemLabel="2" itemValue="2" />
+						<f:selectItem itemLabel="3" itemValue="3" />
+						<f:selectItem itemLabel="4" itemValue="4" />
+						<f:selectItem itemLabel="5" itemValue="5" />
+						<f:selectItem itemLabel="6" itemValue="6" />
+						<f:selectItem itemLabel="7" itemValue="7" />
+						<f:selectItem itemLabel="8" itemValue="8" />
+						<f:selectItem itemLabel="9" itemValue="9" />
+						<f:selectItem itemLabel="10" itemValue="10" />
+					</p:selectOneMenu>
+				</h:panelGrid>
+
+				<h:panelGrid columns="2" cellpadding="5">
+					<p:outputLabel for="suite" value="Suite" style="font-weight:bold" />
+					<p:selectOneMenu id="suite" value="#{bookingDetailsBean.suite}"
+						style="width:150px">
+						<f:selectItem itemLabel="Single Room" itemValue="1" />
+						<f:selectItem itemLabel="Premium Single Room" itemValue="2" />
+						<f:selectItem itemLabel="Double Room" itemValue="3" />
+						<f:selectItem itemLabel="Premium Double Room" itemValue="4" />
+						<f:selectItem itemLabel="Deluxe Suite" itemValue="5" />
+						<f:selectItem itemLabel="Executive Suite" itemValue="6" />
+					</p:selectOneMenu>
+				</h:panelGrid>
+
+				<h:panelGrid columns="2" cellpadding="5">
+					<p:outputLabel value="Check In Date " style="font-weight:bold" />
+					<p:calendar value="#{bookingDetailsBean.checkInDate}"
+						pattern="dd/MM/yyyy"  />
+				</h:panelGrid>
+
+				<h:panelGrid columns="2" cellpadding="5">
+					<p:outputLabel value="Check Out Date " style="font-weight:bold" />
+					<p:calendar value="#{bookingDetailsBean.checkOutDate}"
+						pattern="dd/MM/yyyy"/>
+				</h:panelGrid>
+
+				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					<p:outputLabel value="Enable Room Service" style="font-weight:bold" />
+					<p:selectManyCheckbox id="roomServiceEnable"
+						value="#{bookingDetailsBean.roomServiceEnable}">
+						<f:selectItem itemLabel="" itemValue="yes" />
+					</p:selectManyCheckbox>
+				</h:panelGrid>
+				
+				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					<p:outputLabel value="Choose Cuisine" style="font-weight:bold" />
+					<p:selectManyCheckbox id="cuisine"
+						value="#{bookingDetailsBean.cuisine}">
+						<f:selectItem itemLabel="Local" itemValue="local" />
+						<f:selectItem itemLabel="Multi" itemValue="multi" />
+					</p:selectManyCheckbox>
+				</h:panelGrid>
+
+				<p:commandButton value="Submit"
+					action="#{bookingDetailsBean.saveOrUpdate}" ajax="false" />					
+				<p:commandButton value="Logout" action="#{loginBean.logout}" ajax="false" />
+				
+				<p:commandButton value="Check rooms" action="./allRooms.xhtml" ajax="false"/>
+				<p:commandButton value="Update your booking" action="./updateBooking.xhtml" ajax="false"/>
+				<p:commandButton value="Reset Password" action="#{bookingDetailsBean.resetPassword}" ajax="false"/>
+			</div>
+		</h:form>		
+	</div>
+
+	<div class="footer">
+		<a href="index.html"><img src="./res/images/logo.png"></img></a>
+			<div class="logo">
+				<p>Copyright©Boutique Hotel of Dublin</p>
+			</div>
+	</div>
+</body>
+</html>

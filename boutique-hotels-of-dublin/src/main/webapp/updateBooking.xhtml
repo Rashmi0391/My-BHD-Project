@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- added the below line to get to access to the commandButtonon line 20 -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Update a booking</title>
+	</h:head>
+	<body style="background-color: #65909C">
+	
+	<h:dataTable value="#{customerRoomBean.displayBookings()}" var="row">
+                    <h:column>
+                        <c:facet name="header">Your Bookings</c:facet>
+                        #{row} <h:form id="form">
+    						<h:commandButton id="button" value="Adjust" action="#{roomBookingBean.removeBooking()}">
+    						</h:commandButton>
+						</h:form>
+                    </h:column>
+                </h:dataTable>
+ 
+	
+	</body>
+	</html>

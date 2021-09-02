@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+body{
+    background: #fff;
+    color: #fff;
+    font-family: 'Tangerine', sans-serif;
+    font-size: 35px;
+}
+
+.header{
+    display: grid;
+    grid-gap: 10px;
+    grid-area: header;
+    grid-template-areas: "header header header header header header";
+    grid-template-rows: 120px;
+    
+    overflow: hidden;
+    position: relative;
+    background: rgb(223, 181, 154);
+}
+.header .nav{
+    position: absolute;
+    right: 5%;
+}
+.header img{
+    position: absolute;
+    height: 100%;
+}
+.nav li{
+    margin-top: 20%;
+    float: right;
+}
+.nav a {
+    /* å°†aè½¬æ�¢ä¸ºå�—å…ƒç´  */
+    display: block;
+    /* åŽ»é™¤ä¸‹åˆ’çº¿ */
+    color: #fff;
+    text-decoration: none;
+    padding: 0 42px;
+}
+.nav a:hover{
+    background-color: rgb(68, 150, 245);
+    color: #fff;
+}
+
+
+a:link{
+    color:#fff;
+}
+a:hover {
+    opacity: 0.5;
+    transform: scale(0.98);
+}
+a:visited {
+    color:#fff;
+    text-decoration:none;
+}
+
+
+
+.container{
+    display: grid;
+    /* grid-gap: 5px; */
+    grid-template-areas: 
+             "hotel hotel hotel hotel hotel hotel"
+             "rooms rooms rooms dining dining dining"
+             "spa spa gym gym pool pool";
+    grid-template-rows: 600px 450px 300px;
+}
+.container > div {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    
+    transition: all 0.5s ease-in;
+}
+/* .container > div:hover {
+    opacity: 0.5;
+} */
+
+
+.hotel{
+    grid-area: hotel;
+    background: url(./images/hotel.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+.rooms{
+    grid-area: rooms;
+    background: url(./images/rooms.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+.dining{
+    grid-area: dining;
+    background: url(./images/dining.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+.spa{
+    grid-area: spa;
+    background: url(./images/spa.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+.gym{
+    grid-area: gym;
+    background: url(./images/gym.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+.pool{
+    grid-area: pool;
+    background: url(./images/pool.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+
+.footer{
+    display: grid;
+    grid-gap: 10px;
+    grid-area: footer;
+    grid-template-areas: "footer footer footer footer footer footer";
+    grid-template-rows: 120px;
+
+    overflow: hidden;
+    position: relative;
+    background: rgb(223, 181, 154);
+    font-size: 25px;
+}
+.footer .logo{
+    position: absolute;
+    right: 5%;
+    top: 65%;
+}
+.footer img{
+    position: absolute;
+    height: 100%;
+}
