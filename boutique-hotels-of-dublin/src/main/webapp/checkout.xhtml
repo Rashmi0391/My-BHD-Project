@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+    <title>Check Out</title>
+    	<link rel="stylesheet" href="./res/kate-style.css"></link>
+</head>
+<body>
+<div align="center">
+    <h1>Check Out</h1>
+    <br/>
+	<h:form>
+    <h:outputLabel for="product">Booking:</h:outputLabel>  
+	<h:inputText id="booking" value="#{bookingDetails.toString}"/><br/> 
+	
+    <h:outputLabel for="total">Total Amount:</h:outputLabel>  
+	<h:inputText id="total" value="#{authorizePayment.total}"/><br/> 
+   <h:commandButton action="#{authorizePayment.checkOut}" value="Checkout"/>
+   <h:outputText value="#{authorizePayment.product}"/><br/>
+	</h:form>
+</div>
+</body>
+</html>

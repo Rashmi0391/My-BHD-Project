@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Login Page</title>
+	<link rel="stylesheet" href="./res/reset.css"></link>
+	<link rel="stylesheet" href="./res/kate-style.css"></link>
+</h:head>
+
+
+<body>
+
+	<div class="header">
+        <a href="index.html"><img src="./res/images/logo.png"></img></a>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="./index.html">Homepage</a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+	<div class="box">
+		<h:form action="">
+			<div class="container">
+				<p:messages/>
+				<p:outputLabel value="Username: " />
+				<p:inputText value="#{loginBean.userName}" />
+				<p:outputLabel value="Password: " />
+				<p:password value="#{loginBean.password}" />
+				<p:commandButton value="Login" action="#{loginBean.validateUserLogin}" ajax="false" />
+				<p><a href="register.xhtml">Forgot password</a></p>
+			</div>
+		</h:form>
+	</div>
+
+
+	<div class="footer">
+		<a href="index.html"><img src="./res/images/logo.png"></img></a>
+			<div class="logo">
+				<p>Copyright©Boutique Hotel of Dublin</p>
+			</div>
+	</div>
+
+
+</body>
+</html>

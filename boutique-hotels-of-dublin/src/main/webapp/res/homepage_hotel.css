@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.img1{
+    display: grid;
+    grid-area: img;
+    grid-template-areas: "img img img img img img";
+    grid-template-rows: 600px;
+
+    background: url(./images/img1.jpg);
+    background-size: cover;
+}
+.container_hotel{
+    display: grid;
+    grid-template-areas: "g1 g1 g1 g1 g1 g1"
+                ". g2 g2 g2 g2 .";
+    grid-template-rows: 80px 90px;
+
+    
+    
+    align-items: center;
+    text-align: center;
+}
+.g1{
+    grid-area: g1;
+    color: rgb(158, 128, 110);
+    font-family: 'Tangerine', sans-serif;
+    font-size: 30px;
+}
+.g2{
+    grid-area: g2;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+.img2_3{
+    display: grid;
+    grid-template-areas: "img2 img2 img2 img3 img3 img3";
+    grid-template-rows: 450px;
+
+    background-size: cover;
+}
+.img2{
+    grid-area: img2;
+    background: url(./images/img2.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+.img3{
+    grid-area: img3;
+    background: url(./images/img3.jpg);
+    background-size: cover;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}

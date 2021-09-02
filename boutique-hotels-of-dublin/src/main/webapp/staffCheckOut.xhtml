@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">>
+<head>
+<meta charset="ISO-8859-1">
+<title>Check Out</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1"></meta>
+
+<link rel="stylesheet" type="text/css" href="./res/staff-checkbooking.css"/>
+
+</head>
+<body>
+
+<h:form>
+ 
+    <div class="card">
+        <p:dataTable var="guest" value="#{roomBookingBean.checkAllBookings()}">
+            <p:column headerText="Room #">
+                <h:outputText value="#{RoomBooking.getCustomerRoomNumber}" />
+            </p:column>
+
+            <p:column headerText="Name">
+                <h:outputText value="#{guest.getName()}" />
+            </p:column>
+
+            <p:column headerText="Customer ID">
+                <h:outputText value="#{guest.getUserName()}" />
+            </p:column>
+            
+
+   
+            <p:column headerText="Check-in Date">
+                <h:outputText value="#{Room.getBookedDates}" />
+            </p:column>
+            
+            <p:column headerText="Number of Guests">
+                <h:outputText value="Adults: #{BookingDetailsBean.getNoOfAdults}. Children: #{BookingDetailsBean.getNoOfChild}" />
+            </p:column>
+            
+          
+            <p:column headerText="Check Guests Out">
+            <f:facet name="Check-Out button">
+               <p:commandButton type="button" value="Submit" icon="pi pi-check" action="#">test</p:commandButton>
+            </f:facet>
+            </p:column>
+        </p:dataTable>
+        
+        
+    </div>
+    
+  </h:form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Room Portal</title>
+	<meta http-equiv="expires" content="0"></meta>
+</h:head>
+<body>
+
+<h:form>
+	<p:outputLabel value="Room Number: " />
+	<p:inputText value="#{roomBookingBean.roomNo}" /> 
+	<p:commandButton value="Show all rooms" action="#{roomBookingBean.showAllRooms}" ajax="false" />
+	<p:commandButton value="Create new room" action="#{roomBookingBean.showAllRooms}" ajax="false" />
+	<p:commandButton value="Change a room" action="#{roomBookingBean.showAllRooms}" ajax="false" />
+	<p:commandButton value="Delete a room" action="#{roomBookingBean.removeRoom(roomNo)}" ajax="false" />
+</h:form>
+
+
+
+
+<h:selectOneMenu>
+	<f:selectItem itemValue="delete" itemLabel="delete"/>
+	<f:selectItem itemValue="change price" itemLabel="change price"/>
+	<f:selectItem itemValue="show all" itemLabel="show all"/>
+	<f:selectItem itemValue="add room" itemLabel="add room"/>
+</h:selectOneMenu>
+</body>
+</html>
